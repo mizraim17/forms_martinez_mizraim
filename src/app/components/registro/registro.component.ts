@@ -12,18 +12,22 @@ export class RegistroComponent {
   constructor() {
     let controles: any = {
       nombre: new FormControl('', [Validators.required]),
-      apellidos: new FormControl('Martinez Sanchez', []),
-      direccion: new FormControl('Av. principal 114', [Validators.required]),
-      correo: new FormControl('mizraim.martinezgmail.com', [
-        Validators.pattern('^[^@]+@[^@]+.[a-zA-Z]{2,}$'),
+      apellidos: new FormControl('', [Validators.required]),
+      direccion: new FormControl('', [Validators.required]),
+      correo: new FormControl('', [
+        Validators.required,
+        Validators.pattern(
+          '[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}'
+        ),
       ]),
       becado: new FormControl(true, []),
+      contrasena: new FormControl('', [Validators.minLength(4)]),
     };
     this.formularioRegistro = new FormGroup(controles);
   }
 
   login() {
-    console.log(this.formularioRegistro);
-    console.log(this.formularioRegistro.controls['correo'].errors);
+    // console.log(this.formularioRegistro);
+    console.log(this.formularioRegistro.controls['nombre']);
   }
 }

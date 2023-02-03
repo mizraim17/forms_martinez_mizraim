@@ -2,48 +2,87 @@
   Registro de Estudiantes
 </h2>
 
-<form [formGroup]="formularioRegistro " class="row g-3 mt-5">
+<form [formGroup]="formularioRegistro " (ngSubmit)="login()" class="row g-3 mt-5">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Nombre</label>
     <input formControlName="nombre" type="text" class="form-control" id="inputEmail4">
-    <div class="valido" *ngIf="formularioRegistro.controls['nombre'].valid">
+    <div class="valido"
+      *ngIf="  formularioRegistro.controls['nombre'].touched && formularioRegistro.controls['nombre'].valid ">
       Es Válido
     </div>
-    <div class="invalido" *ngIf="formularioRegistro.controls['nombre'].errors?.['required'] ">
+    <div class="invalido"
+      *ngIf="formularioRegistro.controls['nombre'].errors?.['required'] && formularioRegistro.controls['nombre'].dirty ">
       Está Vacío
     </div>
   </div>
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Apellido</label>
     <input formControlName="apellidos" type="text" class="form-control" id="inputPassword4">
-    <div class="valido" *ngIf="formularioRegistro.controls['apellidos'].valid">
+    <div class="valido"
+      *ngIf="  formularioRegistro.controls['apellidos'].touched && formularioRegistro.controls['apellidos'].valid ">
       Es Válido
     </div>
-    <div class="invalido" *ngIf="formularioRegistro.controls['apellidos'].errors?.['required'] ">
+    <div class="invalido"
+      *ngIf="formularioRegistro.controls['apellidos'].errors?.['required'] && formularioRegistro.controls['apellidos'].dirty ">
       Está Vacío
     </div>
   </div>
   <div class="col-12">
     <label for="inputAddress" class="form-label">Dirección</label>
     <input formControlName="direccion" type="text" class="form-control" id="inputAddress"
-      placeholder="Calle centro 124">
-    <div class="valido" *ngIf="formularioRegistro.controls['direccion'].valid">
+      placeholder="Calle centro #124">
+    <div class="valido"
+      *ngIf="  formularioRegistro.controls['direccion'].touched && formularioRegistro.controls['direccion'].valid ">
       Es Válido
     </div>
-    <div class="invalido" *ngIf="formularioRegistro.controls['direccion'].errors?.['required'] ">
+    <div class="invalido"
+      *ngIf="formularioRegistro.controls['direccion'].errors?.['required'] && formularioRegistro.controls['direccion'].dirty ">
       Está Vacío
     </div>
+
   </div>
 
   <div class="col-md-6">
     <label for="mail-1" class="form-label">Correo</label>
     <input formControlName="correo" type="email" class="form-control" id="mail-1">
-    <div class="valido" *ngIf="formularioRegistro.controls['correo'].valid">
+
+
+    <div class="valido"
+      *ngIf="formularioRegistro.controls['correo'].valid && formularioRegistro.controls['correo'].touched">
       Es Válido
     </div>
-    <div class="invalido" *ngIf="formularioRegistro.controls['correo'].errors?.['pattern'] ">
+
+    <div class="invalido"
+      *ngIf="formularioRegistro.controls['correo'].errors?.['pattern'] && formularioRegistro.controls['correo'].dirty  ">
       Formato incorrecto
     </div>
+
+    <div class="invalido"
+      *ngIf="formularioRegistro.controls['correo'].errors?.['required'] && formularioRegistro.controls['correo'].dirty  ">
+      Correo vacío
+    </div>
+
+  </div>
+
+
+  <div class="col-md-6">
+    <label for="mail-1" class="form-label">Contraseña</label>
+    <input formControlName="contrasena" type="password" class="form-control" id="mail-1">
+
+
+    <div class="valido"
+      *ngIf="formularioRegistro.controls['contrasena'].valid && formularioRegistro.controls['contrasena'].touched">
+      Es Válido
+    </div>
+
+
+
+    <div class="invalido"
+      *ngIf="formularioRegistro.controls['contrasena'].errors?.['minlength'] && formularioRegistro.controls['contrasena'].dirty ">
+      Minimo son 4 caracteres
+
+    </div>
+
   </div>
 
 
@@ -56,6 +95,6 @@
     </div>
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary" (click)="login()">Registro</button>
+    <button type="submit" class="btn btn-primary">Registrar</button>
   </div>
 </form>
