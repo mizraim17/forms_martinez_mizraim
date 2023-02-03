@@ -1,0 +1,43 @@
+<form [formGroup]="formularioRegistro " class="row g-3 mt-5">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Nombre</label>
+    <input formControlName="nombre" type="text" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Apellido</label>
+    <input formControlName="apellidos" type="text" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Dirección</label>
+    <input formControlName="direccion" type="text" class="form-control" id="inputAddress"
+      placeholder="Calle centro 124">
+  </div>
+
+  <div class="col-md-6">
+    <label for="mail-" class="form-label">Correo</label>
+    <input formControlName="nombre" type="email" class="form-control" id="mail-1">
+  </div>
+
+
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Estado</label>
+    <select id="inputState" class="form-select">
+      <option selected>Elije</option>
+      <option>Cursando</option>
+      <option>Nuevo</option>
+      <option>Baja</option>
+    </select>
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input formControlName="estado" class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Beca
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" (click)="login()">Registro</button>
+  </div>
+</form>
