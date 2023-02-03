@@ -21,7 +21,10 @@ export class RegistroComponent {
         ),
       ]),
       becado: new FormControl(true, []),
-      contrasena: new FormControl('', [Validators.minLength(4)]),
+      contrasena: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
     };
     this.formularioRegistro = new FormGroup(controles);
   }

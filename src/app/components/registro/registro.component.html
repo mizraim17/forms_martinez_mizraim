@@ -83,6 +83,11 @@
 
     </div>
 
+    <div class="invalido"
+      *ngIf="formularioRegistro.controls['contrasena'].errors?.['required'] && formularioRegistro.controls['contrasena'].dirty  ">
+      Correo vacío
+    </div>
+
   </div>
 
 
