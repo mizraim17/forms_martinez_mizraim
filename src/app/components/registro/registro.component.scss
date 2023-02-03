@@ -1,0 +1,27 @@
+$color-sucess: #22a39f;
+$color-danger: #ff6464;
+$col-tit: #ff8474;
+$col-txt-1: white;
+
+.valido {
+  font-weight: bold;
+  color: $color-sucess;
+  padding-top: 1%;
+  font-style: italic;
+}
+
+.invalido {
+  @extend .valido;
+  color: $color-danger;
+}
+
+label {
+  color: $col-txt-1;
+  font-weight: bold;
+}
+
+h2.tit-main {
+  padding-top: 4%;
+  font-weight: bold;
+  color: $col-tit;
+}

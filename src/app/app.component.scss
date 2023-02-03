@@ -1,0 +1,15 @@
+$col-back-1: #222222;
+// $col-back-1: #383838;
+
+body {
+  background-color: $col-back-1;
+  min-height: 100vh;
+}
+
+.title-main {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2%;
+  color: #ff8474;
+}
