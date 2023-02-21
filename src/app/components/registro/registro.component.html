@@ -69,23 +69,24 @@
     <label for="mail-1" class="form-label">Contraseña</label>
     <input formControlName="contrasena" type="password" class="form-control" id="mail-1">
 
-
     <div class="valido"
       *ngIf="formularioRegistro.controls['contrasena'].valid && formularioRegistro.controls['contrasena'].touched">
       Es Válido
     </div>
 
-
-
     <div class="invalido"
       *ngIf="formularioRegistro.controls['contrasena'].errors?.['minlength'] && formularioRegistro.controls['contrasena'].dirty ">
       Minimo son 4 caracteres
-
     </div>
 
     <div class="invalido"
       *ngIf="formularioRegistro.controls['contrasena'].errors?.['required'] && formularioRegistro.controls['contrasena'].dirty  ">
       Correo vacío
+    </div>
+
+    <div class="invalido"
+      *ngIf="formularioRegistro.controls['contrasena'].errors?.['pattern'] && formularioRegistro.controls['contrasena'].dirty  ">
+      Se requiere
     </div>
 
   </div>

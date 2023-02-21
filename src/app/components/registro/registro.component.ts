@@ -24,6 +24,9 @@ export class RegistroComponent {
       contrasena: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
+        Validators.pattern(
+          '(?=^.{8,}$)((?=.*d)|(?=.*W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"'
+        ),
       ]),
     };
     this.formularioRegistro = new FormGroup(controles);
@@ -31,6 +34,6 @@ export class RegistroComponent {
 
   login() {
     // console.log(this.formularioRegistro);
-    console.log(this.formularioRegistro.controls['nombre']);
+    console.log(this.formularioRegistro.controls['contrasena']);
   }
 }
